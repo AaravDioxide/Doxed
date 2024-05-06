@@ -29,6 +29,15 @@
         p {
             font-size: 1.5em;
         }
+
+        .todo {
+            text-align: left;
+            margin: 20px auto;
+            max-width: 400px;
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
     </style>
 </head>
 
@@ -36,9 +45,38 @@
     <h1>Coming Soon</h1>
     <p>Stay tuned for updates!</p>
     <div>
-        <a href=":INSTAGRAMHERE:" target="_blank">Instagram</a>
-        <!-- Add more social links as needed -->
+        <a href="https://www.instagram.com/aaravdioxide/" target="_blank">Instagram</a>
+        <a href="https://twitter.com/aarav14wastaken" target="_blank">Twitter</a>
+        <p>Email: dandonaaravyandex@gmail.com</p>
+        <p>Phone: +91 6280133746</p>
     </div>
+
+    <div class="todo">
+        <h2>TODO List</h2>
+        <ul id="todo-list">
+            <li>Update website content</li>
+            <li>Add more social links</li>
+            <li>Customize website design</li>
+        </ul>
+        <input type="text" id="new-task" placeholder="Add a new task">
+        <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <script>
+        function addTask() {
+            var newTaskInput = document.getElementById("new-task");
+            var newTaskText = newTaskInput.value;
+            if (newTaskText.trim() === "") {
+                alert("Please enter a task!");
+                return;
+            }
+            var todoList = document.getElementById("todo-list");
+            var newTaskElement = document.createElement("li");
+            newTaskElement.textContent = newTaskText;
+            todoList.appendChild(newTaskElement);
+            newTaskInput.value = "";
+        }
+    </script>
 </body>
 
 </html>
